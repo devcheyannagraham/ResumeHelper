@@ -70,6 +70,7 @@ export function initializeChatUi(dependencies: ChatUiDependencies): void {
       });
     } finally {
       setFormDisabled(false);
+      chatInput.focus();
     }
   });
 
