@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  This file defines the static chat interface shell for the app.
+  It exists to provide a no-server frontend that posts user messages via fetch.
+-->
+<html lang="en">
+  <head>
+    <!-- Core document metadata and stylesheet loading. -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume Helper Chat</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Main chat surface for the single-page frontend experience. -->
+    <main class="layout">
+      <section class="chat-card" aria-labelledby="chat-title">
+        <h1 id="chat-title">Resume Helper Chat</h1>
+        <p class="subtitle">Ask a question and submit it to your API.</p>
+
+        <!-- Live region where user and assistant messages are appended. -->
+        <div
+          id="messages"
+          class="messages"
+          aria-live="polite"
+          aria-label="Chat messages"
+        ></div>
+
+        <!-- Input form used to collect and submit the next chat message. -->
+        <form id="chat-form" class="chat-form">
+          <label for="user-message">Message</label>
+          <textarea
+            id="user-message"
+            name="message"
+            rows="4"
+            placeholder="Paste resume text or ask for improvements..."
+            required
+          ></textarea>
+          <button id="submit-button" type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Client-side chat behavior is loaded after the document markup. -->
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>
